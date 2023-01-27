@@ -1,0 +1,74 @@
+<html>
+  <head>
+    <title>Warzone 2 Season 2</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        width: 100vw;
+        border: 1px solid blue;
+      }
+      div {
+        font-size: 10rem;
+        font-family: "Roboto", sans-serif;
+        padding: 1rem;
+      }
+    </style>
+  </head>
+  <body>
+    <div></div>
+
+    <script>
+      // implemented by Copilot
+      const toDoubleDigits = (num) => {
+        num += "";
+        if (num.length === 1) {
+          num = "0" + num;
+        }
+        return num;
+      };
+
+      const countDownDate = new Date("2023-02-15T18:00:00.000+01:00").getTime();
+
+      const countFn = () => {
+        const now = new Date().getTime();
+        const distance = countDownDate - now;
+        const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        const hours = Math.floor(
+          (distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
+        );
+        const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+        document.getElementsByTagName("div")[0].innerHTML = `${toDoubleDigits(
+          days
+        )}d ${toDoubleDigits(hours)}:${toDoubleDigits(
+          minutes
+        )}:${toDoubleDigits(seconds)}`;
+
+        if (distance < 0) {
+          clearInterval(x);
+          document.getElementsByTagName("div")[0].innerHTML = "EXPIRED";
+        }
+      };
+
+      countFn();
+
+      const x = setInterval(countFn, 1000);
+    </script>
+  </body>
+</html>
