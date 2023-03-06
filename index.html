@@ -1,6 +1,6 @@
 <html>
   <head>
-    <title>Attack on Titan One Last Ride</title>
+    <title>Diablo 4 early beta</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -24,7 +24,7 @@
       }
       div {
         font-size: 10rem;
-        font-family: "Roboto", sans-serif;
+        font-family: 'Roboto', sans-serif;
         padding: 1rem;
       }
     </style>
@@ -34,12 +34,12 @@
 
     <script>
       // implemented by Copilot
-      const DATE = "2023-03-03T16:25:00.000+01:00";
+      const DATE = '2023-03-17T18:00:00.000+01:00';
 
       const toDoubleDigits = (num) => {
-        num += "";
+        num += '';
         if (num.length === 1) {
-          num = "0" + num;
+          num = '0' + num;
         }
         return num;
       };
@@ -56,7 +56,7 @@
         const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
         const seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
-        document.getElementsByTagName("div")[0].innerHTML = `${toDoubleDigits(
+        document.getElementsByTagName('div')[0].innerHTML = `${toDoubleDigits(
           days
         )}d ${toDoubleDigits(hours)}:${toDoubleDigits(
           minutes
@@ -64,7 +64,7 @@
 
         if (distance < 0) {
           clearInterval(x);
-          document.getElementsByTagName("div")[0].innerHTML = "EXPIRED";
+          document.getElementsByTagName('div')[0].innerHTML = 'EXPIRED';
         }
       };
 
