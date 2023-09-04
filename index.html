@@ -23,7 +23,6 @@
         align-items: center;
         height: 100vh;
         width: 100vw;
-        border: 1px solid blue;
         background-color: #161616;
       }
       div {
@@ -66,9 +65,11 @@
         const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
         const seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
-        document.getElementsByTagName('div')[0].innerHTML = `${toDoubleDigits(
-          days
-        )}d ${toDoubleDigits(hours)}:${toDoubleDigits(
+        const daysPart = days > 0 ? `${toDoubleDigits(days)}d ` : '';
+
+        document.getElementsByTagName(
+          'div'
+        )[0].innerHTML = `${daysPart}${toDoubleDigits(hours)}:${toDoubleDigits(
           minutes
         )}:${toDoubleDigits(seconds)}`;
 
