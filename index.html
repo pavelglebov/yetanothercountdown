@@ -1,6 +1,6 @@
 <html>
   <head>
-    <title>Monter Hunter Wilds</title>
+    <title>Battlefield Countdown</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -23,27 +23,52 @@
         align-items: center;
         height: 100vh;
         width: 100vw;
-        background-color: #161616;
+        background: linear-gradient(
+          135deg,
+          #1a1a2e 0%,
+          #16213e 50%,
+          #0f3460 100%
+        );
+        position: relative;
+        overflow: hidden;
+      }
+      body::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse"><path d="M 10 0 L 0 0 0 10" fill="none" stroke="%23ffffff" stroke-width="0.1" opacity="0.1"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>');
+        opacity: 0.3;
       }
       div {
         font-size: 10rem;
         font-family: 'Roboto', sans-serif;
         padding: 1rem;
+        text-shadow: 0 0 20px rgba(0, 150, 255, 0.5);
+        z-index: 1;
+        position: relative;
       }
       span {
         font-size: 1.4rem;
         font-family: 'Roboto', sans-serif;
-        font-weight: 100;
+        font-weight: 300;
+        text-transform: uppercase;
+        letter-spacing: 0.2em;
+        text-shadow: 0 0 10px rgba(0, 150, 255, 0.3);
+        z-index: 1;
+        position: relative;
       }
     </style>
   </head>
   <body>
-    <span>Monter Hunter Wilds</span>
+    <span>Battlefield Release</span>
     <div></div>
 
     <script>
-      // implemented by Copilot
-      const DATE = '2025-02-28T18:00:00+02:00';
+      // Countdown to Battlefield release
+      const DATE = '2024-10-10T17:00:00+02:00';
 
       const toDoubleDigits = (num) => {
         num += '';
